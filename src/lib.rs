@@ -137,7 +137,7 @@ impl<const N: usize> LedRing<N> {
     /// Create a new ring with a clock-position-to-physical-index mapping.
     ///
     /// `clock_map` should have N entries mapping logical position to physical LED index.
-    pub fn new(clock_map: &[usize; N]) -> Self {
+    pub const fn new(clock_map: &[usize; N]) -> Self {
         Self {
             animation: RingAnimation::off(),
             rotation: 0,
@@ -146,7 +146,7 @@ impl<const N: usize> LedRing<N> {
     }
 
     /// Create with a rotation anchor (first lit LED position for Fill patterns).
-    pub fn with_rotation(clock_map: &[usize; N], rotation: u8) -> Self {
+    pub const fn with_rotation(clock_map: &[usize; N], rotation: u8) -> Self {
         Self {
             animation: RingAnimation::off(),
             rotation,
