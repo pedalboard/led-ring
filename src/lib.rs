@@ -219,7 +219,7 @@ impl<const N: usize> LedRing<N> {
                 frame
             }
             Modifier::Blink => {
-                if (tick / 25) % 2 == 1 {
+                if (tick / 12) % 2 == 1 {
                     [Rgb::BLACK; N]
                 } else {
                     frame
