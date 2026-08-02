@@ -1,6 +1,6 @@
 [package]
 name = "led-ring"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "No-std LED ring animation engine: spatial patterns (solid, fill, heatmap, dots) + temporal modifiers (blink, pulse, rotate, glow). Generic over ring size."
