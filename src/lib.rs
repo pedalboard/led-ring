@@ -214,7 +214,7 @@ impl<const N: usize> LedRing<N> {
             Modifier::Solid => frame,
             Modifier::Glow => {
                 for px in frame.iter_mut() {
-                    *px = px.scale(32);
+                    *px = px.scale(64);
                 }
                 frame
             }
@@ -348,7 +348,7 @@ mod tests {
         let mut ring = ring12();
         ring.set(RingAnimation::glow(Rgb::new(255, 255, 255)));
         let frame = ring.render(0);
-        assert!(frame.iter().all(|px| px.r == 32 && px.g == 32 && px.b == 32));
+        assert!(frame.iter().all(|px| px.r == 64 && px.g == 64 && px.b == 64));
     }
 
     #[test]
@@ -360,7 +360,7 @@ mod tests {
             modifier: Modifier::Blink,
         });
         assert!(ring.render(0).iter().all(|px| *px == c));
-        assert!(ring.render(25).iter().all(|px| *px == Rgb::BLACK));
+        assert!(ring.render(12).iter().all(|px| *px == Rgb::BLACK));
     }
 
     #[test]
