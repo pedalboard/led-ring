@@ -214,7 +214,7 @@ impl<const N: usize> LedRing<N> {
             Modifier::Solid => frame,
             Modifier::Glow => {
                 for px in frame.iter_mut() {
-                    *px = px.scale(64);
+                    *px = px.scale(48);
                 }
                 frame
             }
@@ -348,7 +348,7 @@ mod tests {
         let mut ring = ring12();
         ring.set(RingAnimation::glow(Rgb::new(255, 255, 255)));
         let frame = ring.render(0);
-        assert!(frame.iter().all(|px| px.r == 64 && px.g == 64 && px.b == 64));
+        assert!(frame.iter().all(|px| px.r == 48 && px.g == 48 && px.b == 48));
     }
 
     #[test]
